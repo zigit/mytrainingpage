@@ -1,0 +1,3 @@
+Timestamp,Lap #,Lap Trigger,Sport,Start Time,Total Timer Time [s],Total Elapsed Time [s],Start Latitude [semicircles],Start Longitude [semicircles],End Latitude [semicircles],End Longitude [semicircles],Total Distance [m],Total Calories [calories],Total Ascent [m],Total Descent [m],Avg Speed [m/s],Max Speed [m/s],Avg Cadence [rpm],Max Cadence [rpm],Avg Power [watts],Max Power [watts],
+Sat Jul 24 09:28:30 EDT 2010,1,MANUAL,CYCLING,Sat Jul 24 06:52:39 EDT 2010,9350.71,9350.71,464202869,-919026460,464170951,-919004324,83575.61,1739,652,661,8.937,18.751,86,142,228,1005,
+Sat Jul 24 09:28:32 EDT 2010,2,MANUAL,CYCLING,Sat Jul 24 09:28:30 EDT 2010,1.88,1.88,464170951,-919004324,464170817,-919004102,0.32,0,0,0,0.174,0.455,86,142,228,1005,
