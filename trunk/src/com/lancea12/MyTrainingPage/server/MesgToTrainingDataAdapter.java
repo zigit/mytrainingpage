@@ -24,85 +24,83 @@ import java.util.Iterator;
 
 public class MesgToTrainingDataAdapter implements MesgListener, MesgDefinitionListener {
 
-	private static int num = 0;
-
+	private boolean inLap = false;
+	
 	public MesgToTrainingDataAdapter() {
 
-   }
+	}
 
-   public void close() {
+	public void close() {
 
-   }
+	}
 
-   public void onMesgDefinition(MesgDefinition mesgDef) {
-      Collection<FieldDefinition> fields = mesgDef.getFields();
-      Iterator<FieldDefinition> fieldsIterator;
-      int fieldNum;
-      Mesg mesg = Factory.createMesg(mesgDef.getNum());
-
-
-
-      if (mesg == null)
-      {
-
-      }
-      else
-      {
-    	  	//System.out.println("defining " + mesg.getName());
-      }
-      
-      fieldNum = 0;
-      fieldsIterator = fields.iterator();
-      
-      while (fieldsIterator.hasNext()) {
-         FieldDefinition fieldDef = fieldsIterator.next();
-         Field field = Factory.createField(mesgDef.getNum(), fieldDef.getNum());
-         fieldNum++;
-         
-         if (field == null)
-         {
-
-         }
-         else
-         {
-
-         }
-
-
-      }
-
-
-   }
-   
-   public void onMesg(Mesg mesg) {
-      Collection<Field> fields = mesg.getFields();
-      Iterator<Field> fieldsIterator;
-      int fieldNum;
-      
-
-
-      fieldNum = 0;
-      fieldsIterator = fields.iterator();
-      
-      System.out.println(num + " " + mesg.getField(0).getName() + " = " + mesg.getFieldStringValue(0));
-      num++;
-      
-      while (fieldsIterator.hasNext()) {
-         Field field = fieldsIterator.next();
-
-         fieldNum++;
-         
-
-
-         String value = field.getStringValue(0);
-         for (int fieldElement = 1; fieldElement < field.getNumValues(); fieldElement++) {
-            value += "|" + field.getStringValue(fieldElement);
-         }
+	public void onMesgDefinition(MesgDefinition mesgDef) {
+		Collection<FieldDefinition> fields = mesgDef.getFields();
+		Iterator<FieldDefinition> fieldsIterator;
+		int fieldNum;
+		Mesg mesg = Factory.createMesg(mesgDef.getNum());
 
 
 
-      }
+		if (mesg == null)
+		{
+
+		}
+		else
+		{
+			//System.out.println("defining " + mesg.getName());
+		}
+
+		fieldNum = 0;
+		fieldsIterator = fields.iterator();
+
+		while (fieldsIterator.hasNext()) {
+			FieldDefinition fieldDef = fieldsIterator.next();
+			Field field = Factory.createField(mesgDef.getNum(), fieldDef.getNum());
+			fieldNum++;
+
+			if (field == null)
+			{
+
+			}
+			else
+			{
+
+			}
 
 
-   }
+		}
+
+
+	}
+
+	public void onMesg(Mesg mesg) {
+		Collection<Field> fields = mesg.getFields();
+		Iterator<Field> fieldsIterator;
+		int fieldNum;
+
+		fieldsIterator = fields.iterator();
+
+		System.out.println(mesg.getName());
+		
+		//if (mesg.getName().equals("event") || mesg.getName().equals("record")){
+			while (fieldsIterator.hasNext()) {
+				Field field = fieldsIterator.next();
+
+				System.out.println("\t" + field.getName() + " = " + field.getValue());
+
+
+			}
+		//}
+
+
+
+		//System.out.println(mesg.getField(0).getName() + " = " + mesg.getFieldStringValue(0));
+
+
+
+
+
+
+	}
 }

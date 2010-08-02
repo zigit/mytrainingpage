@@ -4,10 +4,24 @@ public class DataPoint {
 	
 	private double latitude;
 	private double longitude;
+	private double altitude;
+	public double getAltitude() {
+		return altitude;
+	}
+	public void setAltitude(double altitude) {
+		this.altitude = altitude;
+	}
+	public double getTemp() {
+		return temp;
+	}
+	public void setTemp(double temp) {
+		this.temp = temp;
+	}
 	private double speed;
 	private int power;
 	private int heartrate;
 	private int cadence;
+	private double temp;
 	
 	public int getCadence() {
 		return cadence;
