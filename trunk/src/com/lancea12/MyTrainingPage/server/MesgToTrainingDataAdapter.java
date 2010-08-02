@@ -24,8 +24,9 @@ import java.util.Iterator;
 
 public class MesgToTrainingDataAdapter implements MesgListener, MesgDefinitionListener {
 
+	private static int num = 0;
 
-   public MesgToTrainingDataAdapter() {
+	public MesgToTrainingDataAdapter() {
 
    }
 
@@ -47,7 +48,7 @@ public class MesgToTrainingDataAdapter implements MesgListener, MesgDefinitionLi
       }
       else
       {
-    	  	System.out.println("defining " + mesg.getName());
+    	  	//System.out.println("defining " + mesg.getName());
       }
       
       fieldNum = 0;
@@ -82,6 +83,9 @@ public class MesgToTrainingDataAdapter implements MesgListener, MesgDefinitionLi
 
       fieldNum = 0;
       fieldsIterator = fields.iterator();
+      
+      System.out.println(num + " " + mesg.getField(0).getName() + " = " + mesg.getFieldStringValue(0));
+      num++;
       
       while (fieldsIterator.hasNext()) {
          Field field = fieldsIterator.next();
