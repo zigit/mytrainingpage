@@ -23,7 +23,7 @@ public class FitParser {
 
 	
 	   public static void main(String args[]) {
-		      String in = "/home/lancea12/workspace/mytrainingpage/resources/data/2010-07-24-06-52-38.fit";
+		      String in = "/home/lancea12/workspace/mytrainingpage/resources/data/2010-08-02-21-49-00.fit";
 		      String out = "/home/lancea12/workspace/mytrainingpage/resources/output/new";
 
 
