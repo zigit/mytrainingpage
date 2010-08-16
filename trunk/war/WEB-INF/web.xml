@@ -8,17 +8,17 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>greetServlet</servlet-name>
-    <servlet-class>MyTrainingPage.server.GreetingServiceImpl</servlet-class>
+    <servlet-class>com.lancea12.server.GreetingServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/java/greet</url-pattern>
+    <url-pattern>/test/greet</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>java.html</welcome-file>
+    <welcome-file>MyTrainingPage.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
