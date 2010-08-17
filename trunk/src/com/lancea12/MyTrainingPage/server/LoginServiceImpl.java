@@ -1,6 +1,5 @@
 package com.lancea12.MyTrainingPage.server;
 
-import com.lancea12.MyTrainingPage.client.GreetingService;
 import com.lancea12.MyTrainingPage.client.LoginService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
