@@ -19,7 +19,6 @@ package com.lancea12.MyTrainingPage.server;
 
 import com.garmin.fit.*;
 import com.lancea12.MyTrainingPage.server.trainingData.Activity;
-import com.lancea12.MyTrainingPage.server.trainingData.Lap;
 import com.lancea12.MyTrainingPage.server.trainingData.Session;
 
 import java.util.Collection;
