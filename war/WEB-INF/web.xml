@@ -8,12 +8,12 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>loginServlet</servlet-name>
-    <servlet-class>com.lancea12.MyTrainingPage.webServer.LoginServiceImpl</servlet-class>
+    <servlet-class>com.lancea12.MyTrainingPage.server.LoginServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
     <servlet-name>loginServlet</servlet-name>
-    <url-pattern>/test/login</url-pattern>
+    <url-pattern>/MyTrainingPage/login</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->

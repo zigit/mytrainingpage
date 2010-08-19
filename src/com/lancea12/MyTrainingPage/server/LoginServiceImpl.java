@@ -14,7 +14,7 @@ LoginService {
 
 	@Override
 	public Boolean isLoggedIn() {
-		return true;
+		return false;
 	}
 
 	@Override
