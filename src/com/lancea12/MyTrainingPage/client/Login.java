@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.lancea12.MyTrainingPage.shared.User;
 
 public class Login {
 
@@ -95,9 +96,63 @@ public class Login {
 	}
 	
 	private void displayRegPage(){
+		final User user = new User();
+		
 		Label regLabel = new  Label("Please provide the information below to register");
+
+		HorizontalPanel firstNamePanel = new HorizontalPanel();
+		Label firstNameLabel = new Label("First Name:");
+		final TextBox firstNameBox = new TextBox();
+		firstNamePanel.add(firstNameLabel);
+		firstNamePanel.add(firstNameBox);
+		
+		HorizontalPanel lastNamePanel = new HorizontalPanel();
+		Label lastNameLabel = new Label("Last Name:");
+		final TextBox lastNameBox = new TextBox();
+		lastNamePanel.add(lastNameLabel);
+		lastNamePanel.add(lastNameBox);
+		
+		HorizontalPanel userNamePanel = new HorizontalPanel();
+		Label userNameLabel = new Label("User Name:");
+		final TextBox userNameBox = new TextBox();
+		lastNamePanel.add(userNameLabel);
+		lastNamePanel.add(userNameBox);
+
+		Button regButton = new Button("Register");
+		regButton.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				user.setFirstName(firstNameBox.getText());
+				user.setFirstName(lastNameBox.getText());
+				user.setFirstName(userNameBox.getText());
+				
+				loginService.register (user, 
+						new AsyncCallback<Boolean>() {
+
+							@Override
+							public void onFailure(Throwable caught) {
+								// TODO Auto-generated method stub
+								
+							}
+
+							@Override
+							public void onSuccess(Boolean result) {
+								// TODO Auto-generated method stub
+								
+							}
+					
+				});
+			}
+		});
+		
 		
 		mainPanel.add(regLabel);
+		mainPanel.add(firstNamePanel);
+		mainPanel.add(lastNamePanel);
+		mainPanel.add(userNamePanel);
+		
+		
 	}
 
 	
