@@ -1,7 +1,11 @@
 package com.lancea12.MyTrainingPage.server;
 
+
 import com.lancea12.MyTrainingPage.client.LoginService;
-import com.lancea12.MyTrainingPage.shared.User;
+import com.lancea12.MyTrainingPage.shared.LoginInfo;
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
@@ -11,7 +15,17 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class LoginServiceImpl extends RemoteServiceServlet implements
 LoginService {
 
+	private UserService userService;
 
+	public LoginServiceImpl() {
+		super();
+		userService = UserServiceFactory.getUserService();
+	}
+
+	public LoginServiceImpl(Object delegate) {
+		super(delegate);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public Boolean isLoggedIn() {
@@ -19,14 +33,27 @@ LoginService {
 	}
 
 	@Override
-	public Boolean login(String userName, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public LoginInfo login(String requestUri) {
+		
+	    User user = userService.getCurrentUser();
+	    LoginInfo loginInfo = new LoginInfo();
 
-	@Override
-	public Boolean register(User user) {
-		// TODO Auto-generated method stub
+	    if (user != null) {
+	      loginInfo.setLoggedIn(true);
+	      loginInfo.setEmailAddress(user.getEmail());
+	      loginInfo.setNickname(user.getNickname());
+	      loginInfo.setLogoutUrl(userService.createLogoutURL(requestUri));
+	    } else {
+	      loginInfo.setLoggedIn(false);
+	      loginInfo.setLoginUrl(userService.createLoginURL(requestUri));
+	    }
+	    return loginInfo;
+	}
+	
+	
+	public LoginInfo logout(String requestUri) {
+		
+		
 		return null;
 	}
 	
