@@ -11,7 +11,6 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.lancea12.MyTrainingPage.shared.User;
 
 public class Login {
 
@@ -19,7 +18,7 @@ public class Login {
 	 * Create a remote service proxy to talk to the server-side Login service.
 	 */	
 	private final LoginServiceAsync loginService = (LoginServiceAsync)GWT.create(LoginService.class);
-
+	
 	private VerticalPanel mainPanel;
 	
 	public Login (VerticalPanel vPanel){
@@ -96,7 +95,7 @@ public class Login {
 	}
 	
 	private void displayRegPage(){
-		final User user = new User();
+		//final TrainingUser user = new TrainingUser();
 		
 		Label regLabel = new  Label("Please provide the information below to register");
 
@@ -115,18 +114,16 @@ public class Login {
 		HorizontalPanel userNamePanel = new HorizontalPanel();
 		Label userNameLabel = new Label("User Name:");
 		final TextBox userNameBox = new TextBox();
-		lastNamePanel.add(userNameLabel);
-		lastNamePanel.add(userNameBox);
+		userNamePanel.add(userNameLabel);
+		userNamePanel.add(userNameBox);
 
 		Button regButton = new Button("Register");
 		regButton.addClickHandler(new ClickHandler() {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				user.setFirstName(firstNameBox.getText());
-				user.setFirstName(lastNameBox.getText());
-				user.setFirstName(userNameBox.getText());
-				
+
+				/*
 				loginService.register (user, 
 						new AsyncCallback<Boolean>() {
 
@@ -143,6 +140,9 @@ public class Login {
 							}
 					
 				});
+				*/
+				
+				
 			}
 		});
 		
@@ -151,6 +151,7 @@ public class Login {
 		mainPanel.add(firstNamePanel);
 		mainPanel.add(lastNamePanel);
 		mainPanel.add(userNamePanel);
+		mainPanel.add(regButton);
 		
 		
 	}
