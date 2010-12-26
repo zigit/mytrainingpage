@@ -1,7 +1,6 @@
 package com.lancea12.MyTrainingPage.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.lancea12.MyTrainingPage.server.trainingData.TrainingUser;
 import com.lancea12.MyTrainingPage.shared.LoginInfo;
 
 /**

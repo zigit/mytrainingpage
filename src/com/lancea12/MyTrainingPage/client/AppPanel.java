@@ -15,7 +15,7 @@ public class AppPanel extends VerticalPanel {
 		this.addStyleName("appContainer");
 		Label testLabel = new Label("app panel");
 		
-		this.add(menuBar);
+		//this.add(menuBar);
 		this.add(testLabel);
 	}
 
