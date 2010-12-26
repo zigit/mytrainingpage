@@ -11,6 +11,7 @@ import com.google.gwt.http.client.RequestBuilder.Method;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -45,30 +46,36 @@ public class MyTrainingPageEntryPoint implements EntryPoint {
 		// Check login status using login service.
 	    loginService = GWT.create(LoginService.class);
 	    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
-	      public void onFailure(Throwable error) {
-	      }
+	    	public void onFailure(Throwable error) {
+	    	}
 
-	      public void onSuccess(LoginInfo result) {
-	        loginInfo = result;
-	        if(loginInfo.isLoggedIn()) {
-	          loadTrainingPage();
-	        } else {
-	          loadLogin();
-	        }
-	      }
+	    	public void onSuccess(LoginInfo result) {
+	    		loginInfo = result;
+	    		if(loginInfo.isLoggedIn()) {
+	    			loadTrainingPage();
+	    		} else {
+	    			loadLogin();
+	    		}
+	    	}
 	    });
 		
 	}
 	
 	
 	public void loadTrainingPage(){	
+		HorizontalPanel mainPanel = new HorizontalPanel();
 		VerticalPanel appPanel = new AppPanel(this);
-		
 		VerticalPanel adPanel = new VerticalPanel();
+		
+		
 		Label adLabel = new Label("Ads go here");
-		adPanel.addStyleName("adContainer");
+//		adPanel.addStyleName("adContainer");
 		adPanel.add(adLabel);
 
+		
+		mainPanel.add(appPanel);
+		mainPanel.add(adPanel);
+		
 		RootPanel.get("appContainer").add(appPanel);
 		RootPanel.get("adContainer").add(adPanel);
 
