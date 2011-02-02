@@ -1,0 +1,67 @@
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+.adContainer{
+  position: absolute;
+  top: 0px;
+  left: 80%;
+  width: 20%;
+  height: 100%;
+  border: solid 1px black;
+  padding: 3px;
+}
+
+.appContainer {
+  position: absolute;
+  top: 0px;
+  width: 78%;
+  height: 100%;
+  border: solid 4px blue;
+}
+
+.sendButton {
+  display: block;
+  font-size: 16pt;
+}
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+  width: 400px;
+}
+
+.dialogVPanel {
+  margin: 5px;
+}
+
+.workoutList {
+  position: absolute;
+  left: 8px;
+  top: 30px;
+  width: 200px;
+  height: 50%;
+  border-style: solid;
+  border-width: 4px;
+  border-color: blue;
+  padding: 3px;
+}
+
+.dataTabPanel {
+  position: absolute;
+  left: 220px;
+  top: 30px;
+  width: 50%;
+  height: 80%;
+  	
+}
+
+.serverResponseLabelError {
+  color: red;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+
