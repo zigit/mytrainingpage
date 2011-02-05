@@ -1,0 +1,9 @@
+cleaning up some things
+
+--This line, and those below, will be ignored--
+
+D    src/com/lancea12/MyTrainingPage/server
+D    src/com/lancea12/MyTrainingPage/client
+D    src/com/lancea12/mytrainingpage/client/AppPanel.java
+D    src/com/lancea12/mytrainingpage/client/LoginServiceAsync.java
+D    src/com/lancea12/mytrainingpage/client/MyTrainingPageEntryPoint.java
