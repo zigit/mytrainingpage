@@ -8,7 +8,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Mytrainingpage.html</welcome-file>
+    <welcome-file>MyTrainingPage.html</welcome-file>
   </welcome-file-list>
 
   <!-- Servlets -->
@@ -17,4 +17,4 @@
   	<servlet-class>com.lancea12.mytrainingpage.server.LoginServiceImpl</servlet-class></servlet>
   <servlet-mapping>
   	<servlet-name>loginServlet</servlet-name>
-  	<url-pattern>/mytrainingpage/login</url-pattern></servlet-mapping></web-app>
+  	<url-pattern>/MyTrainingPage/login</url-pattern></servlet-mapping></web-app>
