@@ -2,15 +2,17 @@ package com.lancea12.mytrainingpage.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.logical.shared.ResizeEvent;
+import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
 import com.google.gwt.http.client.RequestException;
 import com.google.gwt.http.client.Response;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -41,11 +43,10 @@ public class MyTrainingPageEntryPoint implements EntryPoint {
 	@Override
 	public void onModuleLoad() {
 		
+		System.out.println("loading page");
 
 		// Check login status using login service.
-	    System.out.println("test1");
 	    loginService = (LoginServiceAsync) GWT.create(LoginService.class);
-	    System.out.println("test2");
 
 	    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
 	    	public void onFailure(Throwable error) {
@@ -68,8 +69,7 @@ public class MyTrainingPageEntryPoint implements EntryPoint {
 	
 	
 	public void loadTrainingPage(){	
-		HorizontalPanel mainPanel = new HorizontalPanel();
-		VerticalPanel appPanel = new AppPanel(this);
+		final AppPanel appPanel = new AppPanel(this);
 		VerticalPanel adPanel = new VerticalPanel();
 		
 		
@@ -78,12 +78,22 @@ public class MyTrainingPageEntryPoint implements EntryPoint {
 		adPanel.add(adLabel);
 
 		
-		mainPanel.add(appPanel);
-		mainPanel.add(adPanel);
+	    Window.addResizeHandler(new ResizeHandler() {
+			
+			@Override
+			public void onResize(ResizeEvent event) {
+				ResizeEvent.fire(appPanel, (int)(event.getWidth() * 0.8), event.getHeight());
+				
+			}
+		});
+	    
+		
 		
 		RootPanel.get("appContainer").add(appPanel);
 		RootPanel.get("adContainer").add(adPanel);
 
+		
+		
 	}
 
 
