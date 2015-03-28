@@ -1,0 +1,1 @@
+This project is intended to be useful for training in cycling.  It works with the Quarq Cinco powermeter.  It is similar to WKO+ from training peaks.
