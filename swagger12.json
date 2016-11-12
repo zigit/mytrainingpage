@@ -1,0 +1,267 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://10.51.135.191:8080",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/statistics/items",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "GET STATISTICS ITEM",
+          "parameters": [
+            {
+              "name": "Body",
+              "paramType": "body",
+              "required": true,
+              "allowMultiple": false,
+              "$ref": "GetStatisticsItemrequest"
+            }
+          ],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/search/",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "SEARCH",
+          "parameters": [
+            {
+              "name": "Body",
+              "paramType": "body",
+              "required": true,
+              "allowMultiple": false,
+              "$ref": "SEARCHRequest"
+            }
+          ],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/attributes/",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "GET TYPE ATTRIBUTES",
+          "parameters": [
+            {
+              "name": "Body",
+              "paramType": "body",
+              "required": true,
+              "allowMultiple": false,
+              "$ref": "GetTypeAttributesrequest"
+            }
+          ],
+          "authorizations": {},
+          "responseMessages": []
+        },
+        {
+          "method": "POST",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "POST TYPE ATTRIBUTES",
+          "parameters": [
+            {
+              "name": "Body",
+              "paramType": "body",
+              "required": true,
+              "allowMultiple": false,
+              "$ref": "PostTypeAttributesrequest"
+            }
+          ],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/items",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "GET ITEMS",
+          "parameters": [],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/items/",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "POST ITEM",
+          "parameters": [],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/statistics/",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "GET STATISTICS",
+          "parameters": [
+            {
+              "name": "Body",
+              "paramType": "body",
+              "required": true,
+              "allowMultiple": false,
+              "$ref": "GetStatisticsrequest"
+            }
+          ],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/items/1/attributes",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "POST ATTRIBUTE",
+          "parameters": [
+            {
+              "name": "Body",
+              "paramType": "body",
+              "required": true,
+              "allowMultiple": false,
+              "$ref": "PostAttributerequest"
+            }
+          ],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    },
+    {
+      "path": "/items/1",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "",
+          "deprecated": false,
+          "nickname": "DELETE ITEM",
+          "parameters": [],
+          "authorizations": {},
+          "responseMessages": []
+        }
+      ]
+    }
+  ],
+  "models": {
+    "GetStatisticsItemrequest": {
+      "id": "GetStatisticsItemrequest",
+      "required": [
+        "Name",
+        "Nature"
+      ],
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Nature": {
+          "type": "string"
+        }
+      },
+      "subTypes": []
+    },
+    "SEARCHRequest": {
+      "id": "SEARCHRequest",
+      "required": [
+        "IMEI"
+      ],
+      "properties": {
+        "IMEI": {
+          "type": "string"
+        }
+      },
+      "subTypes": []
+    },
+    "GetTypeAttributesrequest": {
+      "id": "GetTypeAttributesrequest",
+      "required": [
+        "Name",
+        "Nature"
+      ],
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Nature": {
+          "type": "string"
+        }
+      },
+      "subTypes": []
+    },
+    "PostTypeAttributesrequest": {
+      "id": "PostTypeAttributesrequest",
+      "required": [
+        "Name",
+        "Type"
+      ],
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      },
+      "subTypes": []
+    },
+    "GetStatisticsrequest": {
+      "id": "GetStatisticsrequest",
+      "required": [
+        "Name",
+        "Nature"
+      ],
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Nature": {
+          "type": "string"
+        }
+      },
+      "subTypes": []
+    },
+    "PostAttributerequest": {
+      "id": "PostAttributerequest",
+      "required": [
+        "IMEI"
+      ],
+      "properties": {
+        "IMEI": {
+          "type": "string"
+        }
+      },
+      "subTypes": []
+    }
+  },
+  "authorizations": {}
+}
